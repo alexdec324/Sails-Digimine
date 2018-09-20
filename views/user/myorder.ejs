@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MY ORDER</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chat -->
+    <link href="css/chat/jquery.jqplot.min.css" rel="stylesheet">
+    <link href="css/chat/jquery-ui.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="styles/myorder.css" rel="stylesheet" type="text/css">
+    <link href="styles/fonts.css" rel="stylesheet" type="text/css">
+    <link href="styles/green-circle-check.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p>
+                            <%if(hashpower){ var zcash = hashpower.zcash.split(','); var ethereum = hashpower.ethereum.split(','); var litecoin = hashpower.litecoin.split(',');%>
+                            <a href="" class="hash_val"><span id="ethereum_val"><%=ethereum[2]%></span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val"><%=litecoin[2]%></span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val"><%=zcash[2]%></span>H/s for Zcach</a>
+                            <%}else{%>
+                            <a href="" class="hash_val"><span id="ethereum_val">0</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">0</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">0</span>H/s for Zcach</a>
+                            <%}%>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/logout"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="mynavbar">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span class="block menu-title"><strong class="font-bold">WELCOME <%=username%></strong>
+                             </span>
+                        </div>
+                    </li>
+                    <li class="nav-header">
+                        <span class="bottom-line">________</span>
+                    </li>
+                    <li>
+                        <a href="/welcome"><img src="images/icon/summary.png" width="17px" height="17px">  <span class="nav-label">SUMMARY</span></a> 
+                    </li>
+                    <li>
+                        <a href="/allocation"><img src="images/icon/allocation.png" width="17px" height="17px">  <span class="nav-label">ALLOCATION</span></a>
+                    </li>
+                    <li>
+                        <a href="/hashpower"><img src="images/icon/flash.png" width="17px" height="19px">  <span class="nav-label">BUY HASHPOWER</span></a>
+                    </li>
+                    <li>
+                        <a href="/myorder" class="active"><img src="images/icon/myorder.png" width="20px" height="17px">  <span class="nav-label">MY ORDER</span></a>
+                    </li>
+                    <li>
+                        <a href="/account"><img src="images/icon/user.png" width="20px" height="17px">  <span class="nav-label">MY ACCOUNT</span></a>
+                    </li>
+                </ul>
+                <%if(state != '4'){%>
+                <div class="start-btn">
+                    <button class="start_btn"><span class=>START DIGIMINE MINING</span></button>
+                </div>
+                <%}%>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label class="title">MY PENDING BALANCE OF PAYOUTS</label>
+                        <table class="table table-striped" id="first">
+                            <thead class="table_header">
+                                <tr>
+                                    <th style="width: 24%;">CRYPTO CURRENCY</th>
+                                    <th>CURRENCY CODE</th>
+                                    <th>BALANCE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BITCOIN</td>
+                                    <td>BTC</td>
+                                    <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                    <td>ETHEREUM</td>
+                                    <td>ETHER</td>
+                                    <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                    <td>ZCASH</td>
+                                    <td>ZEC</td>
+                                    <td>0.0000</td>
+                                </tr>
+                                <tr>
+                                    <td>LITECOIN</td>
+                                    <td>LTC</td>
+                                    <td>0.0000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label class="title">MY PENDING BALANCE PAYOUT HISTORY</label>
+                        <table class="table" id="second">
+                            <tbody>
+                                <!-- <tr>
+                                    <td>
+                                        <input type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox" /><label for="checkboxG4" class="css-label">BTC BALANCE OF 0.00051196 SUCCESSFULLY ADDED ON 2017-10-17|13:02</label> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" checked="checked"/><label for="checkboxG5" class="css-label">BTC BALANCE OF 0.00051196 SUCCESSFULLY ADDED ON 2017-10-17|13:02</label>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox" /><label for="checkboxG6" class="css-label">BTC BALANCE OF 0.00051196 SUCCESSFULLY ADDED ON 2017-10-17|13:02</label> 
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label class="title">MY PENDING ORDERS</label>
+                        <table class="table table-striped" id="third">
+                            <thead class="table_header">
+                                <tr>
+                                    <th class="first_col_head">INFO ABOUT ORDER</th>
+                                    <th>HASHPOWER</th>
+                                    <th>INVOICE ID</th>
+                                    <th>CREATED</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <%if(pendings){%>
+                            <%pendings.forEach(function(pending){%>
+                            <%var zcash = pending.zcash.split(','); var ethereum = pending.ethereum.split(','); var litecoin = pending.litecoin.split(',');%>
+                                <% if(zcash[2] != 0) { %>
+                                <tr>
+                                    <td class="first_col">ZCASH <%=zcash[0]%> MONTH</td>
+                                    <td><%=zcash[2]%> H/S</td>
+                                    <td><%=pending.invoice_id%></td>
+                                    <td><%=pending.createdAt.toISOString().split('T')[0]%></td>
+                                </tr>
+                                <%}%>
+                                <% if(ethereum[2] != 0) { %>
+                                <tr>
+                                    <td class="first_col">ETHEREUM <%=ethereum[0]%> MONTH</td>
+                                    <td><%=ethereum[2]%> MH/S</td>
+                                    <td><%=pending.invoice_id%></td>
+                                    <td><%=pending.createdAt.toISOString().split('T')[0]%></td>
+                                </tr>
+                                <%}%>
+                                <% if(litecoin[2] != 0) { %>
+                                <tr>
+                                    <td class="first_col">LITECOIN <%=litecoin[0]%> MONTH</td>
+                                    <td><%=litecoin[2]%> H/S</td>
+                                    <td><%=pending.invoice_id%></td>
+                                    <td><%=pending.createdAt.toISOString().split('T')[0]%></td>
+                                </tr>
+                                <%}%>
+                            <%});%>
+                            <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label class="title">MY COMPLETED ORDERS</label>
+                        <table class="table table-striped" id="forth">
+                            <thead class="table_header">
+                                <tr>
+                                    <th class="first_col_head">ORDER CREATED</th>
+                                    <th>START DATE</th>
+                                    <th>END DATE</th>
+                                    <th>HASHPOWER</th>
+                                    <th>PRICE</th>
+                                    <th>ORDER STATUS</th>
+                                </tr>
+                            </thead>
+                            <!-- <tbody>
+                                <tr>
+                                    <td class="first_col">2017-01-21 18:45:45</td>
+                                    <td>2017-01-21</td>
+                                    <td><></td>
+                                    <td>0.15 H/S</td>
+                                    <td>AUD 65.53</td>
+                                    <td>
+                                        <input type="checkbox" name="checkboxG7" id="checkboxG7" class="css-checkbox" /><label for="checkboxG7" class="css-label"> APPROVED </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first_col">2017-01-21 18:45:45</td>
+                                    <td>2017-01-21</td>
+                                    <td><></td>
+                                    <td>0.15 H/S</td>
+                                    <td>AUD 65.53</td>
+                                    <td>
+                                        <input type="checkbox" name="checkboxG8" id="checkboxG8" class="css-checkbox" checked="checked"/><label for="checkboxG8" class="css-label"> APPROVED </label>
+                                    </td>
+                                </tr>
+                            </tbody> -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <!-- <script src="js/dashboard/jquery-2.1.1.js"></script> -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/chartJs/jquery.circlechart.js"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    
+    <!-- Custom and plugin javascript -->
+    <!-- <script src="js/dashboard/inspinia.js"></script> -->
+    <!-- <script src="js/jquery.knob.js"></script> -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.navbar-minimalize').click(function(){
+                $('#mynavbar').slideToggle("slow");
+            });
+            $(window).resize(function(){
+                if ($(window).width() > 768) {
+                    $('#mynavbar').show();
+                }
+            });
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });   
+            $('.start_btn').click(function(){
+                <%if(state == '1' || state == '2'){%>
+                    window.location = '/allocation';
+                <%}%>
+                <%if(state == '3'){%>
+                    window.location = '/hashpower';
+                <%}%>
+            });
+        });
+    </script>
+</body>
+</html>

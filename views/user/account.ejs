@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="styles/myaccount.css" rel="stylesheet" type="text/css">
+    <!-- <link href="styles/font-awesome.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p>
+                            <%if(hashpower){ var zcash = hashpower.zcash.split(','); var ethereum = hashpower.ethereum.split(','); var litecoin = hashpower.litecoin.split(',');%>
+                            <a href="" class="hash_val"><span id="ethereum_val"><%=ethereum[2]%></span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val"><%=litecoin[2]%></span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val"><%=zcash[2]%></span>H/s for Zcach</a>
+                            <%}else{%>
+                            <a href="" class="hash_val"><span id="ethereum_val">0</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">0</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">0</span>H/s for Zcach</a>
+                            <%}%>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/logout"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="mynavbar">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span class="block menu-title"><strong class="font-bold">WELCOME <%=username%></strong>
+                             </span>
+                        </div>
+                    </li>
+                    <li class="nav-header">
+                        <span class="bottom-line">________</span>
+                    </li>
+                    <li>
+                        <a href="/welcome"><img src="images/icon/summary.png" width="17px" height="17px">  <span class="nav-label">SUMMARY</span></a> 
+                    </li>
+                    <li>
+                        <a href="/allocation"><img src="images/icon/allocation.png" width="17px" height="17px">  <span class="nav-label">ALLOCATION</span></a>
+                    </li>
+                    <li>
+                        <a href="/hashpower"><img src="images/icon/flash.png" width="17px" height="19px">  <span class="nav-label">BUY HASHPOWER</span></a>
+                    </li>
+                    <li>
+                        <a href="/myorder"><img src="images/icon/myorder.png" width="20px" height="17px">  <span class="nav-label">MY ORDER</span></a>
+                    </li>
+                    <li>
+                        <a href="/account" class="active"><img src="images/icon/user.png" width="20px" height="17px">  <span class="nav-label">MY ACCOUNT</span></a>
+                    </li>
+                </ul>
+                <%if(state != '4'){%>
+                <div class="start-btn">
+                    <button class="start_btn"><span class=>START DIGIMINE MINING</span></button>
+                </div>
+                <%}%>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="wrapper wrapper-content">
+                <div class="content-login">
+                    <div class ="row">
+                        <form action="/datasave" method="post" role = "role" id="account-form">
+                            <div class="col-sm-12 role">
+                                <div class="ibox-info col-sm-12">
+                                    <% if (req.session.flash && req.session.flash.error) { %>
+                                    <div class="alert alert-info">
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        <!-- <p style="text-align:center"><strong>Notice!</strong></p> -->
+                                        <center><%= req.flash('error') %></center> 
+                                    </div>
+                                    <% } %>
+                                    <% if (req.session.flash && req.session.flash.alert) { %>
+                                    <div class="alert alert-info">
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                        <!-- <p style="text-align:center"><strong>Notice!</strong></p> -->
+                                        <center><%= req.flash('alert') %></center> 
+                                    </div>
+                                    <% } %>
+                                    <div class="infos1">
+                                        <div class="col-sm-12" align = "center">
+                                            <span class = "title1">My Account</span>
+                                        </div>
+                                        <div class="col-sm-12" align = "center">
+                                            <span class = "title2">Update your personal information</span>
+                                        </div>
+                                    </div>
+                                    <div id = "form1" class = "col-sm-12">
+                                        <div class="row">
+                                            <div class="form-group col-sm-12 padding1">
+                                                <label class="col-sm-12  col-md-4 col-xs-12 control-label infotitle" >
+                                                    User name&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-1 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+                                                        <input type="text" name="username" class="form-control" required value="<%=user.username%>" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-12  col-md-4 col-xs-6 control-label infotitle">
+                                                    Email&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6  col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                        <input type="email" name="email" class="form-control" required value="<%=user.email%>" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-12  col-md-4 col-xs-6 control-label infotitle">
+                                                    Password&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                                        <input type="password" name="password" class="form-control" required autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-12 col-md-4 col-xs-6 control-label infotitle">
+                                                    Phone&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                        <input type="text" name="phonenum" class="form-control" data-mask="(999) 999_9999" required value="<%=user.phonenum%>" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-12 col-md-4 col-xs-6 control-label infotitle">
+                                                    First Name (Optional)&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class = "input-group-addon">
+                                                            <img class = "img" src="images/my_account/useredit.png"  >
+                                                        </span>
+                                                        <input type="text" name="firstname" class="form-control" value="<%=user.firstname%>" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-12 col-md-4 col-xs-6 control-label infotitle">
+                                                    Last Name (Optional)&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class = "input-group-addon">
+                                                            <img class = "img" src="images/my_account/useredit.png"  >
+                                                        </span>
+                                                        <input type="text" name="lastname" class="form-control" value="<%=user.lastname%>" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12 padding2">
+                                                <label class="col-sm-12 col-md-4 col-xs-6 control-label infotitle">
+                                                    Address (Optional)&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                                        <input type="text" name="address" class="form-control" value="<%=user.address%>" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div style="padding-right:20px;padding-left:20px;">
+                                            <div class="infos2 col-sm-12" align = "center">
+                                                <div style="line-height:70px;">
+                                                    <span class = "title1">My Wallet (Optional)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id = "form2" class ="col-sm-12">
+                                        <div class="row">
+                                            <div class="form-group col-sm-12 padding1">
+                                                <label class="col-sm-12 col-md-4 col-xs-12 control-label infotitle">
+                                                    Bitcoin account ID&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class = "input-group-addon" >
+                                                            <img class = "img" src="images/my_account/Bitcoin.png" >
+                                                        </span>
+                                                        <input type="text" name="bitcoin_id" class="form-control" required autocomplete="off" value="<%=ids.bitcoin_id%>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-12  col-md-4 col-xs-12 control-label infotitle">
+                                                    Ethereum account ID&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class = "input-group-addon">
+                                                            <img class = "img" src="images/my_account/Ethereum.png" >
+                                                        </span>
+                                                        <input type="text" name="ethereum_id" class="form-control" required autocomplete="off" value="<%=ids.ethereum_id%>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-6 col-md-4 col-xs-12 control-label infotitle">
+                                                    Zcash account ID&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class = "input-group-addon">
+                                                            <img class = "img" src="images/my_account/Zcash.png" >
+                                                        </span>
+                                                        <input type="text" name="zcash_id" class="form-control" required autocomplete="off" value="<%=ids.zcash_id%>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12 padding2">
+                                                <label class="col-sm-12  col-md-4 col-xs-12 control-label infotitle">
+                                                    Litecoin account ID&nbsp&nbsp&nbsp&nbsp&nbsp:
+                                                </label>
+                                                <div class="col-sm-12 col-md-6 col-sm-offset-2 col-xs-12 input col-xs-12">
+                                                    <div class="input-group m-b">
+                                                        <span class = "input-group-addon">
+                                                            <img class = "img" src="images/my_account/Litecoin.png">
+                                                        </span>
+                                                        <input type="text" name="litecoin_id" class="form-control" required autocomplete="off" value="<%=ids.litecoin_id%>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id = "form3" class ="col-sm-12 row">
+                                        <div align = "center">
+                                            <button class = "btn btn-lg btnreset bb" type = "reset">
+                                                <i class = "fa fa-refresh"></i>&nbsp&nbsp&nbsp&nbsp&nbspReset
+                                            </button>
+                                            <button class = "btn btn-lg btnsave bb" type = "submit" id="account-submit">
+                                                <i class="fa fa-download"></i>&nbsp&nbsp&nbsp&nbsp&nbspSave
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="footer">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright @ 2017 Genesis All rights reserved.</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="js/dashboard/jquery-2.1.1.js"></script>
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.navbar-minimalize').click(function(){
+                $('#mynavbar').slideToggle("slow");
+            });
+            $(window).resize(function(){
+                if ($(window).width() > 768) {
+                    $('#mynavbar').show();
+                }
+            });
+            $('.start_btn').click(function(){
+                <%if(state == '1' || state == '2'){%>
+                    window.location = '/allocation';
+                <%}%>
+                <%if(state == '3'){%>
+                    window.location = '/hashpower';
+                <%}%>
+            });
+            $('#account-submit').click(function(){
+
+            });
+        });
+    </script>
+
+</body>
+</html>

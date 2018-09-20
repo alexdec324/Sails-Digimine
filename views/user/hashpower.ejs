@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buy HashPower</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Slider -->
+    <link href="css/jquery-ui/jquery-ui.css" rel="stylesheet">
+    
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="styles/hash-power.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p> 
+                            <%if(hashpower){ var zcash = hashpower.zcash.split(','); var ethereum = hashpower.ethereum.split(','); var litecoin = hashpower.litecoin.split(',');%>
+                            <a href="" class="hash_val"><span id="ethereum_val"><%=ethereum[2]%></span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val"><%=litecoin[2]%></span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val"><%=zcash[2]%></span>H/s for Zcach</a>
+                            <%}else{%>
+                            <a href="" class="hash_val"><span id="ethereum_val">0</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">0</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">0</span>H/s for Zcach</a>
+                            <%}%>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/logout"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="mynavbar">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span class="block menu-title"><strong class="font-bold">WELCOME <%=username%></strong>
+                             </span>
+                        </div>
+                    </li>
+                    <li class="nav-header">
+                        <span class="bottom-line">________</span>
+                    </li>
+                    <li>
+                        <a href="/welcome"><img src="images/icon/summary.png" width="17px" height="17px">  <span class="nav-label">SUMMARY</span></a> 
+                    </li>
+                    <li>
+                        <a href="/allocation"><img src="images/icon/allocation.png" width="17px" height="17px">  <span class="nav-label">ALLOCATION</span></a>
+                    </li>
+                    <li>
+                        <a href="/hashpower" class="active"><img src="images/icon/flash.png" width="17px" height="19px">  <span class="nav-label">BUY HASHPOWER</span></a>
+                    </li>
+                    <li>
+                        <a href="/myorder"><img src="images/icon/myorder.png" width="20px" height="17px">  <span class="nav-label">MY ORDER</span></a>
+                    </li>
+                    <li>
+                        <a href="/account"><img src="images/icon/user.png" width="20px" height="17px">  <span class="nav-label">MY ACCOUNT</span></a>
+                    </li>
+                </ul>
+                <%if(state != '4'){%>
+                <div class="start-btn">
+                    <button class="start_btn"><span class=>START DIGIMINE MINING</span></button>
+                </div>
+                <%}%>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="hash-power">
+                <div class="row">
+                    <div class="col-md-12 alertwrapper"></div>
+                    <div class="col-md-8">
+                        <div class="mining-wrapper">
+                            <div class="mining-title zcash-mining-header">
+                                <div class="row">
+                                    <div class="col col-xs-8">
+                                        <img src="images/icon/zcash.png" class="coin-image">
+                                        <div class="coin-title">
+                                            <span class="top-span">Zcash Mining</span>
+                                            <p>Opimize mining</p>
+                                            <div class="zcash-radio radio-wrapper">
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="zcash-radio" value="59" checked=""></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">6</span> Month</span>
+                                                </label>
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="zcash-radio" style="" value="49"></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">12</span> Month</span>
+                                                </label>
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="zcash-radio" style="" value="39"></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">24</span> Month</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4" style="margin-top: 5px">
+                                        <img src="images/icon/cir.png" class="icon-image">
+                                        <div class="mining-value">
+                                            <span class="top-span"><span class="zcash-coin">0.00</span> units</span>
+                                            <p><span class="zcash-coin-val">0</span> H/s</p>
+                                        </div>
+                                        <img src="images/icon/que.png" class="icon-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mining-content zcash-mining-content">
+                                <div class="slider-wrapper">
+                                    <div class="mining-slider" id="zcash-slider">
+                                    </div>
+                                </div>
+                                <div class="slider-scale">
+                                    <span>0 H/s</span>
+                                    <span>300 H/s</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mining-wrapper">
+                            <div class="mining-title ethe-mining-header">
+                                <div class="row">
+                                    <div class="col col-xs-8">
+                                            <img src="images/icon/ethe.png" class="coin-image" style="margin-left:25px;">
+                                        <div class="coin-title">
+                                            <span class="top-span">Ethereum Mining</span>
+                                            <p>Pure Ethereum mining</p>
+                                            <div class="ethe-radio radio-wrapper">
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="ethe-radio" value="59" checked=""></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">6</span> Month</span>
+                                                </label>
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="ethe-radio" style="" value="49"></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">12</span> Month</span>
+                                                </label>
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="ethe-radio" style="" value="39"></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">24</span> Month</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4" style="margin-top: 5px">
+                                        <img src="images/icon/cir.png" class="icon-image">
+                                        <div class="mining-value">
+                                            <span class="top-span"><span class="ethe-coin">0.00</span> units</span>
+                                            <p><span class="ethe-coin-val">0</span> H/s</p>
+                                        </div>
+                                        <img src="images/icon/que.png" class="icon-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mining-content ethe-mining-content">
+                                <div class="slider-wrapper" style="background-color: #fdaa41;">
+                                    <div class="mining-slider" id="ethe-slider">
+                                    </div>
+                                </div>
+                                <div class="slider-scale">
+                                    <span>0 MH/s</span>
+                                    <span>18 MH/s</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mining-wrapper">
+                            <div class="mining-title zcash-mining-header">
+                                <div class="row">
+                                    <div class="col col-xs-8">
+                                        <img src="images/icon/litecoin-white.png" class="coin-image">
+                                        <div class="coin-title">
+                                            <span class="top-span">Litecoin Mining</span>
+                                            <p>Litecoin mining</p>
+                                            <div class="litecoin-radio radio-wrapper">
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="litecoin-radio" value="59" checked=""></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">6</span> Month</span>
+                                                </label>
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="litecoin-radio" style="" value="49"></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">12</span> Month</span>
+                                                </label>
+                                                <label class="radio-element">
+                                                    <input type="radio" class="radio-button" name="litecoin-radio" style="" value="39"></input>
+                                                    <i class="radiobox"></i>
+                                                    <span><span class="month">24</span> Month</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4" style="margin-top: 5px">
+                                        <img src="images/icon/cir.png" class="icon-image" style="margin-top:15px;">
+                                        <div class="mining-value">
+                                            <span class="top-span"><span class="lite-coin">0.00</span> units</span>
+                                            <p><span class="lite-coin-val">0</span> MH/s</p>
+                                        </div>
+                                        <img src="images/icon/que.png" class="icon-image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mining-content zcash-mining-content">
+                                <div class="slider-wrapper">
+                                    <div class="mining-slider" id="litecoin-slider">
+                                    </div>
+                                </div>
+                                <div class="slider-scale">
+                                    <span>0 MH/s</span>
+                                    <span>17 MH/s</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 mining-wrapper">
+                        <ul class="coin-order">
+                            <li>
+                                <span class="order-title">Order Summary</span>
+                                <p>Hashpower contract overview</p>
+                                    <img src="images/icon/Decorative-Line-Black-PNG-Picture.png" width="100%" style="margin-top: -7px;">
+                            </li>
+                            <li>
+                                <span class="order-name">Zcash Hashpower</span>
+                                <p><span class="zcash-coin" id="zcash-unit">0.00</span> units</p>
+                                <p><span class="zcash-coin-val" id="zcash-hashpower">0</span> H/s</p>
+                                <input type="hidden" value="0.00" id="zcash-money"></input>
+                            </li>
+                            <li>
+                                <span class="order-name">Ethereum Hashpower</span>
+                                <p><span class="ethe-coin" id="ethereum-unit">0.00</span> units</p>
+                                <p><span class="ethe-coin-val" id="ethereum-hashpower">0</span> MH/s</p>
+                                <input type="hidden" value="0.00" id="ethereum-money"></input>
+                            </li>
+                            <li>
+                                <span class="order-name">Litecoin Hashpower</span>
+                                <p><span class="lite-coin" id="litecoin-unit">0.00</span> units</p>
+                                <p><span class="lite-coin-val" id="litecoin-hashpower">0</span> MH/s</p>
+                                <input type="hidden" value="0.00" id="litecoin-money"></input>
+                            </li>
+                            <li>
+                                <span style="font-family: 'roboto">PAYMENT TYPE</span>
+                                <P>Please choose your payment option below, e.g., Bitcoin, Credit Card</P>
+                                <img src="images/icon/line.png" width="100%">
+                            </li>
+                            
+                        </ul>
+                        <div class="action-wrapper">
+                            <button class="btn-payment"><span id="payment_way">CREDIT CARD ( AUD )</span> <i class="fa fa-caret-down" ></i></button>
+                            <input type="hidden" id="payment" value="credit-card"></input>
+                            <div class="pay-wrapper">
+                                <ul class="payment-list">
+                                    <li><a href="javascript:void(0)" onclick="payment(0);return false;">Credit card</a></li>
+                                    <li><a href="javascript:void(0)" onclick="payment(1);return false;">Paypal</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="action-wrapper">
+                            <a href="#" class="btn-continue">CONTINUE <i class="fa fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright @ 2017 Genesis All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="js/dashboard/jquery-2.1.1.js"></script>
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+   
+    <script src="js/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.navbar-minimalize').click(function(){
+                $('#mynavbar').slideToggle("slow");
+            });
+            $(window).resize(function(){
+                if ($(window).width() > 768) {
+                    $('#mynavbar').show();
+                }
+            });
+            $('.start_btn').click(function(){
+                <%if(state == '1' || state == '2'){%>
+                    window.location = '/allocation';
+                <%}%>
+                <%if(state == '3'){%>
+                    window.location = '/hashpower';
+                <%}%>
+            });
+            $('.btn-continue').click(function(){
+                var zcash_term = $('.zcash-radio').children().children('input:checked').parent().children().children('.month').text();
+                var ethereum_term = $('.ethe-radio').children().children('input:checked').parent().children().children('.month').text();
+                var litecoin_term = $('.litecoin-radio').children().children('input:checked').parent().children().children('.month').text();
+                var zcash_unit = $('#zcash-unit').text();
+                var ethereum_unit = $('#ethereum-unit').text();
+                var litecoin_unit = $('#litecoin-unit').text();
+                var zcash_hashpower = $('#zcash-hashpower').text();
+                var ethereum_hashpower = $('#ethereum-hashpower').text();
+                var litecoin_hashpower = $('#litecoin-hashpower').text();
+                var zcash_money = $('#zcash-money').val();
+                var ethereum_money = $('#ethereum-money').val();
+                var litecoin_money = $('#litecoin-money').val();
+                if( zcash_hashpower == 0 && ethereum_hashpower == 0 && litecoin_hashpower == 0 ) {
+                    alert("Hashpower needs to be greater than zero!");
+                    return false;
+                }
+                var zcash = zcash_term + ',' + zcash_unit + ',' + zcash_hashpower + ',' + zcash_money;
+                var ethereum = ethereum_term + ',' + ethereum_unit + ',' + ethereum_hashpower + ',' + ethereum_money;
+                var litecoin = litecoin_term + ',' + litecoin_unit + ',' + litecoin_hashpower + ',' + litecoin_money;
+                var payment = $('#payment').val();
+                $.post(
+                    '/saveHashpower',
+                    {zcash: zcash, ethereum: ethereum, litecoin: litecoin, payment: payment},
+                    function(){
+                        console.log("Success!");
+                        window.location.href = '/order';
+                    }
+                ).fail(function(res){
+                    alert("Error:" + res.getResponseHeader("error"));
+                });
+                return false;
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $("#zcash-slider").slider({
+                // range: "min",
+                min: 0,
+                max: 300,
+                slide: function(event, ui) {
+                    var max_value = $('.zcash-radio').children().children('input:checked').val();
+                    // console.log(max_value);
+                    with (Math){
+                        var zcash_unit = (parseInt(ui.value)/300).toFixed(2);
+                        var zcash_money = (parseInt(ui.value)/300*parseInt(max_value)).toFixed(2);
+                    }
+                    $(".zcash-coin-val").text(ui.value);
+                    $(".zcash-coin").text(zcash_unit);
+                    $("#zcash-money").val(zcash_money);
+                    // $("#zcash_val").text(ui.value);
+                }
+            });
+            $("#ethe-slider").slider({
+                // range: "min",
+                min: 0,
+                max: 18,
+                slide: function(event, ui) {
+                    var max_value = $('.ethe-radio').children().children('input:checked').val();
+                    // console.log(max_value);
+                    with (Math){
+                        var ethe_unit = (parseInt(ui.value)/18).toFixed(2);
+                        var ethe_money = (parseInt(ui.value)/18*parseInt(max_value)).toFixed(2);
+                    }
+                    $(".ethe-coin-val").text(ui.value);
+                    $(".ethe-coin").text(ethe_unit);
+                    $("#ethereum-money").val(ethe_money);
+                    // $("#ethereum_val").text(ui.value);
+                }
+            });
+            $("#bitcoin-slider").slider({
+                // range: "min",
+                min: 0,
+                max: 10000,
+                slide: function(event, ui) {
+                    $(".bitcoin-coin-val").text(ui.value);
+                    $("#bitcoin_val").text(ui.value);
+                }
+            });
+            $("#litecoin-slider").slider({
+                // range: "min",
+                min: 0,
+                max: 17,
+                slide: function(event, ui) {
+                    var max_value = $('.litecoin-radio').children().children('input:checked').val();
+                    // console.log(max_value);
+                    with (Math){
+                        var lite_unit = (parseInt(ui.value)/17).toFixed(2);
+                        var lite_money = (parseInt(ui.value)/17*parseInt(max_value)).toFixed(2);
+                    }
+                    $(".lite-coin-val").text(ui.value);
+                    $(".lite-coin").text(lite_unit);
+                    $("#litecoin-money").val(lite_money);
+                    // $("#litecoin_val").text(ui.value);
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var mouse_is_inside = false;
+        $('.btn-payment').bind('click touch', function(){
+            if( !mouse_is_inside ){ 
+                $('.payment-list').slideDown('fast');
+                mouse_is_inside = true;
+            }
+            else {
+                $('.payment-list').slideUp('fast');
+                mouse_is_inside = false;
+            }
+        });         
+
+        $(document).bind('click touch', function(event) {
+          if (!$(event.target).parents().addBack().is('.btn-payment')) {
+            $('.payment-list').slideUp('fast');
+            mouse_is_inside = false;
+          }
+        });
+
+        // Stop propagation to prevent hiding "#tooltip" when clicking on it
+        $('.payment-list').bind('click touch', function(event) {
+          event.stopPropagation();
+        });
+        function payment(param){
+            // console.log(param);
+            if (param == '0') {
+                $('#payment_way').text('CREDIT CARD ( AUD )');
+                $('#payment').val('credit-card');
+                $('.payment-list').slideUp('fast');
+                mouse_is_inside = false;
+            }else{
+                $('#payment_way').text('PAYPAL ( AUD )');
+                $('#payment').val('paypal');
+                $('.payment-list').slideUp('fast');
+                mouse_is_inside = false;
+            }
+        }
+    </script>
+</body>
+</html>

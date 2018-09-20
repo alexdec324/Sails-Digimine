@@ -1,0 +1,365 @@
+.col{
+	padding: 0
+}
+#page-wrapper{
+	background-color: white !important;
+	box-shadow: none;
+}
+.hash-power{
+	padding: 30px 20px;
+}
+.alertwrapper{
+	padding: 0 50px;
+}
+.alert{
+	padding:10px;
+}
+.alert center{
+ 	font-size: 18px;
+ 	font-family:'roboto_regular';
+}
+
+.alert p{
+ 	font-size: 18px;
+ 	font-family: 'roboto';
+ 	font-weight: bold;
+ 	text-align: center;
+}
+.mining-wrapper{
+	background-color: #fffbf5;
+	margin-bottom: 130px;
+    padding: 25px 30px;
+}
+/*.coin-order{
+	background-color: #fffbf5;
+}*/
+.zcash-mining-header{
+	background-color: #102e44;
+}
+.ethe-mining-header{
+	background-color: #ffab32;
+}
+.bitcoin-mining-header{
+	background-color: #496c85;
+}
+.mining-title{
+	padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 600px;
+    display: block;
+    /* min-height: 90px; */
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+.top-span{
+	font-family: 'roboto';
+	font-size: 20px;
+	font-weight: bold;
+	display: block;
+}
+.mining-title p{
+	margin-bottom: 0;
+	font-family: 'roboto_light' !important;
+	font-size: 20px;
+}
+.mining-title ul{
+	list-style: none;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.mining-title li{
+	display: block;
+	float: left;
+}
+.coin-image{
+	height: 67px;
+	/*width: 40%;*/
+	float: left;
+	margin-right: 20px;
+    margin-left: 20px;
+}
+/*.coin-image img{
+	height: 67px;
+}*/
+.coin-title{
+	/*width: 60%;*/
+	float: left;
+	/*padding-top: 5px;*/
+	/*line-height: 10px;*/
+}
+.coin-title p{
+	line-height: 20px;
+}
+.coin-title{
+	line-height: 20px;
+    margin-top: 5px;
+}
+.radio-wrapper{
+	display: block;
+	font-family: 'roboto_light' !important;
+    font-size: 14px;
+}
+.radio-element{
+   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  margin-bottom: 0;
+  margin-right:10px;
+}
+.radio-element > input{
+  visibility: hidden;
+  position: absolute;
+}
+.radio-element > i{
+  display: inline-block;
+  vertical-align: middle;
+  width:  15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #102e44;
+}
+.radio-element > input:checked + i{
+  border:3px solid #ffab32;
+}
+.radio-element > span{
+  font-family: 'roboto_light' !important;
+    font-size: 14px;
+}
+.radio-element > input:checked + span{
+	color: blue;
+}
+.ethe-radio .radio-element > i{
+  display: inline-block;
+  vertical-align: middle;
+  width:  15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #ffab32;
+}
+.ethe-radio .radio-element > input:checked + i{
+  border:3px solid #102e44;
+}
+.icon-image{
+	height: 25px;
+	float: left;
+	margin-top: 15px;
+	/*margin-right: 20px;*/
+}
+.mining-value{
+	float: left;
+	/*margin-right: 30px;*/
+	margin-left: 15px;
+	/*padding-top: 5px;*/
+	display: block;
+    min-width: 100px;
+
+}
+
+/*Slider*/
+.slider-wrapper{
+	width: 600px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #102e44;
+    padding: 0 15px;
+}
+#zcash-slider{
+	background-color: #102e44;
+	border:none;
+}
+#ethe-slider{
+	background-color: #ffab32;
+	border:none;
+}
+#bitcoin-slider{
+	background-color: #496c85;
+	border:none;
+}
+#litecoin-slider{
+	background-color: #102e44;
+	border:none;
+}
+.slider-scale{
+	max-width: 600px;
+	margin: 0 auto;
+	margin-top: 25px;
+	display: block;
+}
+.slider-scale span{
+	font-family: 'Myriad Pro';
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffab32;
+}
+.ethe-mining-content .slider-scale span{
+	color: #102e44;
+}
+.slider-scale span:nth-child(1n){
+	padding-left:5px;
+}
+.slider-scale span:nth-child(2n){
+	float: right;
+	padding-right: 5px;
+}
+.ui-slider .ui-slider-range {
+    border-radius: 10px;
+    background-color: #ffab32;
+}
+
+.ui-widget-content {
+    border: 1px solid #aaaaaa;
+    height: 23px;
+    border-radius: 10px;
+    /*max-width: 515px;*/
+    margin: 0 auto;
+}
+
+#zcash-slider .ui-slider-handle{
+}
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    background: url(../images/icon/location.png) no-repeat;
+    background-size: cover;
+    overflow: hidden; 
+    border: none;
+    z-index: 2;
+     width: 1.2em; 
+    width: 34px;
+    height: 50px;
+    cursor: default;
+    -ms-touch-action: none;
+    top: -37px;
+    margin-left: -17px;
+    /*touch-action: none; */
+}
+#ethe-slider .ui-slider-handle{
+    background: url(../images/icon/location1.png) no-repeat;
+    background-size: cover;
+    width: 35px;
+}
+.ui-slider .ui-slider-handle:focus{
+	outline:none !important;
+}
+/*Contract Overview*/
+.coin-order{
+	list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    max-width: 325px;
+}
+.coin-order li{
+	display: block;
+	max-width: 325px;
+	padding-left: 50px; 
+	margin-bottom: 50px;
+	font-family: 'roboto_regular';
+	font-size: 18px;
+	color: #102e44;
+	line-height: 25px;
+}
+.coin-order li p{
+	font-family: 'roboto_regular';
+	font-size: 18px;
+	color: #102e44;
+	line-height: 25px;
+	margin: 0;
+}
+.order-title{
+	font-family: 'roboto';
+}
+.coin-order li:nth-child(1){
+	background-color: #ffab32;
+	min-height: 75px;
+	border-radius: 10px;
+	display: block;
+	padding-top: 10px;
+	padding-right: 50px;
+	margin-bottom: 36px;
+}
+.coin-order li:nth-child(1) p{
+	font-size: 14px;
+	line-height: 18px;
+	text-shadow: 0px 0px 0px;
+}
+.order-name{
+	display: block;
+	font-family: 'roboto_medium';
+}
+.action-wrapper{
+	max-width: 320px;
+    padding-left: 50px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+.btn-payment{
+	display: block;
+	background-color: #102e44;
+	border-radius: 10px;
+	width: 245px;
+	min-height: 55px;
+	text-align: center;
+	font-family: 'roboto';
+	color: white;
+	font-size: 20px;
+	outline: none;
+	border:none;
+}
+.pay-wrapper{
+	display: block;
+	margin-top: 60px;
+}
+.payment-list{
+	position: absolute;
+	list-style: none;
+	display: block;
+	margin:0;
+	padding: 0;
+	color: white;
+	width: 245px;
+	display: none;
+	z-index: 100;
+	margin: 0 auto;
+	/*margin-top:60px; */
+}
+.payment-list li{
+	background-color: #102e44;
+    display: block;
+    /*padding-left: 20px;*/
+    color: white;
+}
+.payment-list li a{
+	color: white;
+    display: block;
+    padding: 5px;
+    padding-left: 20px;
+}
+.payment-list li a:hover{
+	background-color: #ffab32;
+}
+.btn-continue{
+	display: block;
+	background-color: #ffab32;
+	border-radius: 10px;
+	width: 245px;
+	min-height: 55px;
+	text-align: center;
+	font-family: 'roboto';
+	color: white;
+	padding-top: 13px;
+	color: white;
+	font-size: 20px;
+	/*margin: 0 auto;*/
+}
+.btn-continue:hover{
+	background-color: #102e44;
+	color: white;
+}
+

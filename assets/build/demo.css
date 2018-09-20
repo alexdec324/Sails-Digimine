@@ -1,0 +1,13 @@
+.intl-tel-input {
+margin: 10px;
+font-size: 14px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #333;
+}
+.intl-tel-input input {
+width: 250px;
+border: 1px solid #CCC;
+font-family: inherit;
+font-size: 100%;
+color: inherit;
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chat -->
+    <link href="css/chat/jquery.jqplot.min.css" rel="stylesheet">
+    <link href="css/chat/jquery-ui.css" rel="stylesheet">
+
+   
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p>
+                            <a href="#" class="hash_val"><span id="ethereum_val">24</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">12</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">35</span>H/s for Zcach</a>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="mynavbar">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span class="block menu-title"><strong class="font-bold">WELCOME JOHN MARTIN</strong>
+                             </span>
+                        </div>
+                    </li>
+                    <li class="nav-header">
+                        <span class="bottom-line">________</span>
+                    </li>
+                    <li>
+                        <a href="/welcome" class="active"><img src="images/icon/summary.png" width="17px" height="17px">  <span class="nav-label">SUMMARY</span></a> 
+                    </li>
+                    <li>
+                        <a href="/hashpower"><img src="images/icon/flash.png" width="17px" height="19px">  <span class="nav-label">BUY HASHPOWER</span></a>
+                    </li>
+                    <li>
+                        <a href="/allocation"><img src="images/icon/allocation.png" width="17px" height="17px">  <span class="nav-label">ALLOCATION</span></a>
+                    </li>
+                    <li>
+                        <a href="/account"><img src="images/icon/user.png" width="20px" height="17px">  <span class="nav-label">MY ACCOUNT</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="">
+            <div class= "wrapper-content">
+                 <span class="content-title">Your Account Summary</span>
+                 <p>Current account market value: 52.24AUD as of 10/9/2017 12:00 am AEST</p>
+            </div>
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="coin">
+                            <div class="row allocation">
+                                <div class="col-md-7">
+                                    <div class="allocation-title">
+                                        <span>Coin Allocation</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p>Bitcoin:</p>
+                                        <span class="coin-value-perc" id="bitcoin"></span><span class="coin-value-perc">%</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p>Ethereum:</p>
+                                        <span class="coin-value-perc" id="ethereum"></span><span class="coin-value-perc">%</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p>Zcash:</p>
+                                        <span class="coin-value-perc" id="zcash"></span><span class="coin-value-perc">%</span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p>Litecoin:</p>
+                                        <span class="coin-value-perc" id="litecoin"></span><span class="coin-value-perc">%</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="allocation-balance">
+                                        <span>Balance-as of 10/9/2017 12:00am AEST</span>
+                                        <p>Bitcoin: 0.0012</p>
+                                        <p>Ethereum: 0.0032</p>
+                                        <p>Zcash: 0.012</p>
+                                        <p>Litecoin: 0.0008</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span>Coin Balances</span>
+                                </div>
+                                <div class="ibox-content">
+                                    <div id="chart1" class="jqplot-target" style="position: relative;"></div>
+                                </div>
+                                <div class="row chat-legend">
+                                    <ul class="legend-table">
+                                        <li><i style="background-color: #EE7774">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;&nbsp;Bitcoin</li>
+                                        <li><i style="background-color: #FFD41E">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;&nbsp;Ethereum</li>
+                                        <li><i style="background-color: #20FF00">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;&nbsp;Zcash</li>
+                                        <li><i style="background-color: #63ADA7">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;&nbsp;Litecoin</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright @ 2017 Genesis All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <!-- <script src="js/dashboard/jquery-2.1.1.js"></script> -->
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    
+    <!-- Custom and plugin javascript -->
+    <!-- <script src="js/dashboard/inspinia.js"></script> -->
+    <!-- Chat plugin -->
+    <script src="js/chat/jquery.min.js"></script>
+    <script src="js/chat/jquery.jqplot.min.js"></script>
+    <script src="js/chat/jqplot.canvasAxisTickRenderer.min.js"></script>
+    <script src="js/chat/jqplot.canvasTextRenderer.min.js"></script>
+    <script src="js/chat/jqplot.dateAxisRenderer.min.js"></script>
+    <script src="js/chat/jqplot.highlighter.min.js"></script>
+    <script src="js/chat/jqplot.logAxisRenderer.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $({someValue: 0}).animate({someValue: <%=bitcoin%>}, {
+                  duration: 2000,
+                  easing:'swing', 
+                  step: function() { 
+                      $('#bitcoin').text(commaSeparateNumber(Math.round(this.someValue)));
+                  },
+                  complete:function(){
+                      $('#bitcoin').text(commaSeparateNumber(Math.round(this.someValue)));
+                  }
+            });
+            $({someValue: 0}).animate({someValue: <%=ethereum%>}, {
+                  duration: 2000,
+                  easing:'swing', 
+                  step: function() { 
+                      $('#ethereum').text(commaSeparateNumber(Math.round(this.someValue)));
+                  },
+                  complete:function(){
+                      $('#ethereum').text(commaSeparateNumber(Math.round(this.someValue)));
+                  }
+            });
+            $({someValue: 0}).animate({someValue: <%=zcash%>}, {
+                  duration: 2000,
+                  easing:'swing', 
+                  step: function() { 
+                      $('#zcash').text(commaSeparateNumber(Math.round(this.someValue)));
+                  },
+                  complete:function(){
+                      $('#zcash').text(commaSeparateNumber(Math.round(this.someValue)));
+                  }
+            });
+            $({someValue: 0}).animate({someValue: <%=litecoin%>}, {
+                  duration: 2000,
+                  easing:'swing', 
+                  step: function() { 
+                      $('#litecoin').text(commaSeparateNumber(Math.round(this.someValue)));
+                  },
+                  complete:function(){
+                      $('#litecoin').text(commaSeparateNumber(Math.round(this.someValue)));
+                  }
+            });
+
+            function commaSeparateNumber(val){
+                while (/(\d+)(\d{3})/.test(val.toString())){
+                  val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                }
+                return val;
+            }
+
+            $('.navbar-minimalize').click(function(){
+                $('#mynavbar').slideToggle("slow");
+            });
+            $(window).resize(function(){
+                if ($(window).width() > 768) {
+                    $('#mynavbar').show();
+                }
+            });
+            
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+        });
+    </script>
+
+    <script class="code" type="text/javascript">
+        $(document).ready(function () {
+            $.jqplot._noToImageButton = true;
+            var Litecoin = [["2017-10-01 6:00AM",0.007], ["2017-10-04 2:00AM",0.012], ["2017-10-05 4:00AM",0.004], ["2017-10-07 11:00AM",0.009], ["2017-10-08 10:00PM",0.002], ["2017-10-09 10:00PM",0.011]];
+            var Zcach = [["2017-10-01 6:00AM",0.013], ["2017-10-03 10:00PM",0.017], ["2017-10-05 4:00AM",0.009], ["2017-10-07 6:00PM",0.018], ["2017-10-08 10:00PM",0.008], ["2017-10-09 10:00PM",0.022]];
+            var Ethereum = [["2017-10-01 6:00AM",0.014], ["2017-10-04 01:00AM",0.022], ["2017-10-05 10:00AM",0.012], ["2017-10-07 1:00AM",0.019], ["2017-10-08 11:00AM",0.012], ["2017-10-09 10:00PM",0.023]];
+            var Bitcoin = [["2017-10-01 6:00AM",0.019], ["2017-10-04 01:00AM",0.027], ["2017-10-05 10:00AM",0.017], ["2017-10-07 1:00AM",0.024], ["2017-10-08 11:00AM",0.017], ["2017-10-09 10:00PM",0.028]];
+
+            var plot1 = $.jqplot("chart1", [Litecoin, Zcach, Ethereum, Bitcoin], {
+                lineDashType: 'dot',
+                seriesColors: ["#63ADA7", "#20FF00", "#FFD41E", "#EE7774"],
+                highlighter: {
+                    show: true,
+                    sizeAdjust: 1,
+                    tooltipOffset: 9
+                },
+                grid: {
+                    background: 'rgba(57,57,57,0.0)',
+                    drawBorder: false,
+                    shadow: false,
+                    gridLineColor: '#e0e0e0',
+                    gridLineWidth: 2
+                },
+                seriesDefaults: {
+                    rendererOptions: {
+                        smooth: false,
+                        animation: {
+                            show: true
+                        }
+                    },
+                    showMarker: false,
+                    shadow: false,
+                    linePattern: 'dashed'
+                },
+                axesDefaults: {
+                    rendererOptions: {
+                        baselineWidth: 1.5,
+                        baselineColor: '#444444',
+                        drawBaseline: false
+                    }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.DateAxisRenderer,
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            formatString: "%d-%m-%Y",
+                            angle: -30,
+                            textColor: '#000000',
+                            fontSize: 14,
+                            fontFamily: 'Arial'
+                        },
+                        drawMajorGridlines: false
+                    },
+                    yaxis: {
+                        pad: 0,
+                        rendererOptions: {
+                            minorTicks: 1
+                        },
+                        tickOptions: {
+                            textColor: '#000000',
+                            fontSize: 14,
+                            fontFamily: 'Arial',
+                            showMark: false
+                        }
+                    }
+                }
+            });
+
+            $('.jqplot-highlighter-tooltip').addClass('ui-corner-all');
+        });
+    </script>
+
+</body>
+</html>

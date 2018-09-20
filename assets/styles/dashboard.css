@@ -1,0 +1,245 @@
+.header{
+	position: fixed;
+    display: inline-table;
+    background: white;
+    padding: 20px 50px;
+    height: 112px;
+    width: 100%;
+    border-bottom: 3px solid #fdaa41;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,.1);
+    z-index: 100;
+}
+.header .btn-primary{
+	display: none;
+	background-color: #fdaa41;
+    border-color: #fdaa41;
+    color: #FFFFFF;
+}
+
+.header .header-navbar{
+	list-style: none;
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 0px;
+	padding-top: 10px;
+}
+.header .header-navbar li{
+	padding: 0 20px;
+	float: left;
+	line-height: 22px;
+	color:black;
+	display: block;
+	height: 50px;
+}
+.header .header-navbar li:not(:last-child){
+	border-right: 1px solid #e0dede;
+}
+.header .header-navbar li.text{
+	display: block;
+}
+.header .header-navbar li.action{
+	border-right:none;
+	padding: 12px 20px;
+}
+.header .header-navbar li.account{
+	margin-left:-20px;
+}
+.header .header-navbar li.action span{
+	position: relative;
+	font-size: 14px;
+	text-shadow: 0 1px;
+	top: 2px;
+	left: 2px;
+}
+.header .header-navbar li.action:hover{
+	/*background-color:#ffab32;*/
+}
+.header .header-navbar li p{
+	font-family: 'roboto_regular';
+	margin: 0;
+	text-shadow: 0px 0px 0px #000000;
+	line-height: 22px;
+}
+.header .header-navbar li p.market-value-title{
+	font-family: 'roboto_light';
+    font-size: 14px;
+}
+.market-value{
+	font-size: 16.42px;
+	font-weight: bold;
+}
+.header .header-navbar li i{
+	font-size: 20px;
+	/*color:#102e44;*/
+}
+.header .header-navbar li .hash_val{
+	font-family: 'roboto_regular';
+	font-size: 16px;
+}
+.coin-value{
+	list-style: none;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0px;
+    height: 20px;
+}
+.coin-value li{
+	height: 20px !important;
+}
+#page-wrapper{
+	background-color: #f3f3f4;
+	margin-top: 112px;
+}
+.menu-title{
+	font-size: 16px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 30px 0px;
+    border: 1px solid #ffab32;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.nav li{
+	border-bottom: 2px solid #14364f;
+	font-size: 15px;
+    line-height: 0px;
+}
+.bottom-line{
+	padding: 24px 0px 40px 0px;
+    display: block;
+}
+.nav li .active{
+	background-color: #ffab32;
+}
+.nav li .nav-label{
+	top: 2px;
+    left: 7px;
+    position: relative;
+}
+.nav .logo-element{
+	background-color: #fdaa41;
+}
+.start-btn{
+	display: block;
+	margin-top: 150px;
+	padding: 0 10px;
+}
+.start-btn button{
+	display: block;
+    background: linear-gradient(to top,#FD9700,#FDD500); 
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    color: white;
+    font-family: 'roboto';
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+    border: none;
+}
+
+.content-title{
+	color: #fdaa41;
+	font-size: 30px;
+}
+.wrapper-content{
+	padding: 0px 15px 20px 15px;
+}
+.wrapper-content .coin{
+	background-color: white;
+	padding: 20px 30px;
+}
+.allocation{
+	margin-bottom: 25px;
+}
+.allocation-title{
+	padding: 5px 15px;
+	font-size: 20px;
+	color: #fdaa41;
+}
+.allocation-balance{
+	padding:10px 15px; 
+}
+.allocation-balance span{
+	font-size: 16px;
+	color: #fdaa41;
+}
+.coin-value-perc{
+	font-size: 40px;
+	color: #fdaa41;
+	font-weight: bold;
+}
+.wrapper-content p{
+	font-size: 14px;
+	/*font-weight: bold;*/
+	color: #102e44;
+	margin: 0;
+	line-height: 23px;
+	text-shadow: 0px 0px 0px #102e44;
+}
+.wrapper-content .ibox-title{
+	background-color: #102e44;
+	padding: 12px 15px 15px;
+	margin:0 10px;
+	border-style: none;
+}
+.wrapper-content .ibox-title span{
+	color: white;
+}
+.wrapper-content .ibox-content{
+	border-style: none;
+}
+.chat-legend{
+	padding: 0 20px;
+}
+.legend-table{
+	list-style: none;
+	margin-left: 40px;
+	float: left;
+	display: block;
+}
+.legend-table li{
+	float: left;
+	font-size: 13px;
+	color: #333333;
+	margin: 0 20px;
+	text-shadow: 0px 0px 0px;
+}
+
+@media (max-width: 768px){
+	.header .header-navbar li.text, .header .header-navbar li.space{
+		display: none;
+	}
+	.header .header-navbar li{
+		padding: 0 10px;
+	}
+	.logo{
+		display: none;
+	}
+	.header .btn-primary{
+		display: block;
+	}
+	.header{
+		position: relative;
+	}
+	.navbar-static-side{
+		position: relative;
+		top: 0;
+	}
+	#page-wrapper{
+		margin-top: 0;
+	}
+	#mynavbar{
+		display: none;
+		/*margin-top: 112px;*/
+	}
+	#side-menu{
+		text-align: center;
+	}
+	.start-btn{
+		display: none;
+	}
+}

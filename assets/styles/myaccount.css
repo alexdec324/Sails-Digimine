@@ -1,0 +1,245 @@
+@font-face {
+	font-family: 'futurabkbt';
+	src: url('../fonts/tt0140m_.ttf');
+}
+
+@font-face {
+	font-family: 'futurabookbold';
+	src: url('../fonts/futura_book-bold_[allfont.ru].ttf');
+}
+
+@font-face {
+	font-family: 'futurabookc';
+	src: url('../fonts/futurabookc.otf');
+}
+
+@font-face {
+	font-family: 'roboto';
+	src: url('../fonts/roboto/Roboto-Light.ttf');
+	src: url('../fonts/roboto/Roboto-Bold.eot'), url('../fonts/roboto/Roboto-Bold.ttf'), url('../fonts/roboto/Roboto-Bold.woff'), url('../fonts/roboto/Roboto-Bold.woff2'), url('../fonts/roboto/Roboto-Light.eot'), url('../fonts/roboto/Roboto-Light.woff'), url('../fonts/roboto/Roboto-Light.woff2'), url('../fonts/roboto/Roboto-Medium.eot'), url('../fonts/roboto/Roboto-Medium.ttf'), url('../fonts/roboto/Roboto-Medium.woff'), url('../fonts/roboto/Roboto-Medium.woff2'), url('../fonts/roboto/Roboto-Regular.eot'), url('../fonts/roboto/Roboto-Regular.ttf'), url('../fonts/roboto/Roboto-Regular.woff'), url('../fonts/roboto/Roboto-Regular.woff2'), url('../fonts/roboto/Roboto-Thin.eot'), url('../fonts/roboto/Roboto-Thin.ttf'), url('../fonts/roboto/Roboto-Thin.woff'), url('../fonts/roboto/Roboto-Thin.woff2');
+}
+
+@font-face {
+	font-family: 'roboto_light';
+	src: url('../fonts/roboto/Roboto-Light.ttf'),
+		url('../fonts/roboto/Roboto-Light.eot'),
+		url('../fonts/roboto/Roboto-Light.woff'),
+		url('../fonts/roboto/Roboto-Light.woff2');
+}
+
+@font-face {
+	font-family: 'roboto_medium';
+	src: url('../fonts/roboto/Roboto-Medium.ttf'),
+		url('../fonts/roboto/Roboto-Medium.eot'),
+		url('../fonts/roboto/Roboto-Medium.woff'),
+		url('../fonts/roboto/Roboto-Medium.woff2');
+}
+
+@font-face {
+	font-family: 'roboto_regular';
+	src: url('../fonts/roboto/Roboto-Regular.ttf'),
+		url('../fonts/roboto/Roboto-Regular.eot'),
+		url('../fonts/roboto/Roboto-Regular.woff'),
+		url('../fonts/roboto/Roboto-Regular.woff2');
+}
+#page-wrapper{
+	font-family: 'roboto_regular';
+}
+.ibox-info{
+	margin-top:25px;
+}
+.alert{
+	margin-left: 30px;
+	margin-right: 30px;
+}
+label{
+	font-size: 24px;
+	font-weight: 100;
+}
+input.form-control{
+	border-style: solid;
+	border-color: #D9EDF8;
+	border-width: 2px;
+	background-color: #D9EDF8;
+	font-size: 20px;
+} 
+.infos1{
+	background-color:#FDAA41 !important;
+	height:70px;
+	margin-bottom: 100px;
+	margin: 0px 30px  !important;
+}
+.infos2{
+	background-color:#FDAA41 !important;
+	height:70px;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+.title1{
+	    line-height: 37px;
+	color:#102E44 !important;
+	font-family: 'Roboto';
+}
+.infotitle{
+	margin-top:5px;
+	text-align: right;
+	color:#102E44;
+	margin-left: 50px;
+}
+.input-group{
+	text-align: left;
+}
+.input{
+	margin-left: 25px;
+}
+.infotitle1{
+	font-size:24px;
+}
+.infotitle2{
+	padding-left:15px; 
+	margin-right:-30px;
+}
+.btnreset{
+	height: 65px;
+	width: 180px;
+	background-color:#102E44;
+	color: white;
+	margin-right: 50px;
+}
+.btnsave{
+	height: 65px;
+	width: 180px;
+	color: white;
+	background-color:#FDAA41;
+}
+#form3 .bb{
+	font-size: 24px;
+}
+.btnsave:hover{
+	background-color: #102E44;
+	color: white;
+}
+.btnreset:hover{
+	background-color: #FDAA41;
+	color: white;
+}
+span.input-group-addon{
+	font-size: 20px;
+	color:#102E44;
+	padding:7px;
+}
+
+span.input-group-addon{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #D9EDF8;
+}
+#form1{
+	margin-top:40px;
+	margin-bottom:50px;
+	background-color: #FFFBF5;
+}
+#form2{
+	background-color: #FFFBF5;
+}
+#form3{
+	margin-top:150px;
+	margin-bottom: 300px;
+}
+.role{
+	padding:0px 40px;
+}
+.form-group{
+	margin-bottom: 20px;
+}
+img.img{
+	height: 22px;
+	width: 20px;
+}
+i{
+	width: 20px;
+}
+.bb > span{
+	font-size:24px;
+	color:white;
+}
+.bb > span > i{
+	padding-right:30px;
+}
+@media (min-width: 1285px) and (max-width: 1390px) {
+	.infotitle1{
+		font-size:21px;
+	}
+	.bb > span{
+	font-size:21px;
+	color:white;
+}
+}
+@media (min-width: 1170px) and (max-width: 1285px) {
+	.infotitle1{
+		font-size:17px;
+	}
+	.bb > span{
+		font-size:17px;
+		color:white;
+	}
+}
+@media (min-width: 968px) and (max-width: 1170px) {
+	.infotitle1{
+		font-size:17px;
+	}
+	.bb > span{
+		font-size:15px;
+		color:white;
+	}
+	.bb > span > i{
+		padding-right:15px;
+	}
+}
+@media (min-width: 850px) and (max-width: 968px) {
+	.infotitle1{
+		font-size:15px;
+	}
+	.bb > span{
+		font-size:15px;
+		color:white;
+	}
+	.bb > span > i{
+		padding-right:5px;
+	}
+	.infotitle{
+		text-align: left !important;
+	}
+}
+@media (min-width: 768px) and (max-width: 850px){
+	.infotitle1{
+		font-size:15px;
+	}
+	.bb > span{
+		font-size:10px;
+		color:white;
+	}
+	.bb > span > i{
+		padding-right:6px;
+	}
+	.infotitle{
+		text-align: left !important;
+	}
+}
+.title2{
+	color:#102E44 !important;
+}
+.padding1{
+	padding-top: 60px;	
+}
+.padding2{
+	padding-bottom: 50px !important;
+}
+@media (max-width: 768px) {
+	.infotitle{
+		text-align: left !important;
+	}
+}
+#page-wrapper{
+	background-color:white;
+}

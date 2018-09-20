@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buy HashPower</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Slider -->
+    <link href="css/jquery-ui/jquery-ui.css" rel="stylesheet">
+    
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="styles/hash-power.css" rel="stylesheet" type="text/css">
+    <link href="styles/order.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p>
+                            <%if(hashpower){ var zcash = hashpower.zcash.split(','); var ethereum = hashpower.ethereum.split(','); var litecoin = hashpower.litecoin.split(',');%>
+                            <a href="" class="hash_val"><span id="ethereum_val"><%=ethereum[2]%></span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val"><%=litecoin[2]%></span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val"><%=zcash[2]%></span>H/s for Zcach</a>
+                            <%}else{%>
+                            <a href="" class="hash_val"><span id="ethereum_val">0</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">0</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">0</span>H/s for Zcach</a>
+                            <%}%>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/logout"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="mynavbar">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span class="block menu-title"><strong class="font-bold">WELCOME <%=username%></strong>
+                             </span>
+                        </div>
+                    </li>
+                    <li class="nav-header">
+                        <span class="bottom-line">________</span>
+                    </li>
+                    <li>
+                        <a href="/welcome"><img src="images/icon/summary.png" width="17px" height="17px">  <span class="nav-label">SUMMARY</span></a> 
+                    </li>
+                    <li>
+                        <a href="/allocation"><img src="images/icon/allocation.png" width="17px" height="17px">  <span class="nav-label">ALLOCATION</span></a>
+                    </li>
+                    <li>
+                        <a href="/hashpower" class="active"><img src="images/icon/flash.png" width="17px" height="19px">  <span class="nav-label">BUY HASHPOWER</span></a>
+                    </li>
+                    <li>
+                        <a href="/myorder"><img src="images/icon/myorder.png" width="20px" height="17px">  <span class="nav-label">MY ORDER</span></a>
+                    </li>
+                    <li>
+                        <a href="/account"><img src="images/icon/user.png" width="20px" height="17px">  <span class="nav-label">MY ACCOUNT</span></a>
+                    </li>
+                </ul>
+                <%if(state != '4'){%>
+                <div class="start-btn">
+                    <button class="start_btn"><span class=>START DIGIMINE MINING</span></button>
+                </div>
+                <%}%>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="order-wrapper">
+                <!-- <div class="row"> -->
+                    <div class="order-table">
+                        <span class="order-spec">ORDER SPECIFICATION</span>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="10%">#</th>
+                                    <th width="45%">SERVICE</th>
+                                    <th width="10%">TERM</th>
+                                    <th width="">QUANTITY SUBTOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% var num = 0; var zcash = pending.zcash.split(','); var ethereum = pending.ethereum.split(','); var litecoin = pending.litecoin.split(','); %>
+                            <% if(zcash[2] != 0) { %>
+                                <tr>
+                                    <td><%= ++num %></td>
+                                    <td>
+                                        <img src="images/icon/zcash-icon.png" class="coin-icon">
+                                        <div class="service">
+                                            <span><%= zcash[2] %> H/s of Zcash Hashpower</span><br>
+                                            <span>Starting date: <%= date %></span>
+                                        </div>
+                                        
+                                    </td>
+                                    <td>
+                                        <%= zcash[0] %> Months
+                                    </td>
+                                    <td>
+                                        <%= zcash[1] %> units
+                                    </td>
+                                </tr>
+                            <% } %>
+                            <% if(ethereum[2] != 0) { %>
+                                <tr>
+                                    <td><%= ++num %></td>
+                                    <td>
+                                        <img src="images/icon/ethe-icon.png" class="coin-icon2">
+                                        <div class="service">
+                                            <span><%= ethereum[2] %> MH/s of Ethereum Hashpower</span><br>
+                                            <span>Starting date: <%= date %></span>
+                                        </div>
+                                        
+                                    </td>
+                                    <td>
+                                        <%= ethereum[0] %> Months
+                                    </td>
+                                    <td>
+                                        <%= ethereum[1] %> units
+                                    </td>
+                                </tr>
+                            <%}%>
+                            <% if(litecoin[2] != 0) { %>
+                                <tr>
+                                    <td><%= ++num %></td>
+                                    <td>
+                                        <img src="images/icon/litecoin-icon.png" class="coin-icon">
+                                        <div class="service">
+                                            <span><%= litecoin[2] %> MH/s of Litecoin Hashpower</span><br>
+                                            <span>Starting date: <%= date %></span>
+                                        </div>
+                                        
+                                    </td>
+                                    <td>
+                                        <%= litecoin[0] %> Months
+                                    </td>
+                                    <td>
+                                        <%= litecoin[1] %> units
+                                    </td>
+                                </tr>
+                            <%}%>
+                            </tbody>
+                        </table>
+                        <span class="total-quantity">TOTAL &nbsp;&nbsp;&nbsp;unit <%= (parseFloat(zcash[1]) + parseFloat(ethereum[1]) + parseFloat(litecoin[1])).toFixed(2) %></span>
+                        <p class="note">* For credit card payments the payouts will ba balanced first until the card is verified.</p>
+                    </div>
+                    <div class="agreement">
+                        <div class="col-md-6">
+                            <span class="capacity-title">Mining Capacity Share Agreement</span>
+                            <span class="capacity-content">Review and please agree on Mining Capacity Share Agreement to continue.</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="view-agreement ckb">
+                                <input type="checkbox" class="" name="agree" value="1"></input>
+                                <i class="fa"></i>
+                                <span>AGREE ON TERMS</span>
+                            </label>
+                            <button class="view-agreement"  data-toggle="modal" data-target="#myModal6"><img src="images/icon/view-agreement.png"><span>VIEW AGREEMENT</span></button>
+                        </div>
+                    </div>
+                    <div class="confirm-order">
+                        <a href="/payment" class="confirm-button disabled" >CONFIRM ORDER</a>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <div class="footer">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright @ 2017 Genesis All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="js/dashboard/jquery-2.1.1.js"></script>
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+   
+    <script src="js/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.navbar-minimalize').click(function(){
+                $('#mynavbar').slideToggle("slow");
+            });
+            $(window).resize(function(){
+                if ($(window).width() > 768) {
+                    $('#mynavbar').show();
+                }
+            });
+            $("input:checkbox").click(function(){
+                if ($(".confirm-button").hasClass("disabled")) {
+                    $(".confirm-button").removeClass("disabled");
+                }else{
+                    $(".confirm-button").addClass("disabled");
+                }
+            });
+            $('.start_btn').click(function(){
+                <%if(state == '1' || state == '2'){%>
+                    window.location = '/allocation';
+                <%}%>
+                <%if(state == '3'){%>
+                    window.location = '/hashpower';
+                <%}%>
+            });
+        });
+
+    </script>
+    <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <!-- <h4 class="modal-title">Modal title</h4>
+                    <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small> -->
+                </div>
+                <div class="modal-body row">
+                    <div class="col-md-12 modal-body-logo text-center">
+                      <img src="images/Logo-2.png" >
+                    </div>
+                    <div class="col-md-12  modal-body-title">
+                      <div class="col-md-10 text-center col-md-push-1 modal-body-title-terms"> 
+                        <h2>DIGIMINE WEBSITE </h2>
+                      <h2> PRIVACY POLICY</h2>
+                    </div>
+                    <div class="col-md-12 text-center modal-body-title-date">
+                      <h3>DATED: THE 21st DAY OF October 2017</h3>
+                    </div>
+                    <div class="col-md-12 modal-body-container ">
+                      <h2 class="text-center">WEBSITE PRIVACY POLICY</h2>
+                            This web site is owned and operated by Digimine  and will be referred to as "We", "our" and 
+                            "us" in this Internet Privacy Policy. By using this site, you agree to the Internet Privacy 
+                            Policy of this web site ("the  web site"), which is set out on this web site page. The Internet 
+                            Privacy Policy relates to the collection and use of personal information you may supply to us 
+                            through your conduct on the web site.
+                            We reserve the right, at our discretion, to modify or remove portions of this Internet Privacy 
+                            Policy at any time. This Internet Privacy Policy is in addition to any other terms and 
+                            conditions applicable to the web site. We do not make any representations about third party 
+                            web sites that may be linked to the web site. 
+                            We recognise the importance of protecting the privacy of information collected about visitors 
+                            to our web site, in particular information that is capable of identifying an individual 
+                            ("personal information"). This Internet Privacy Policy governs the  manner in which your 
+                            personal information, obtained through the web site, will be dealt with. This Internet Privacy 
+                            Policy should be reviewed periodically so that you are updated on any changes. We welcome 
+                            your comments and feedback. 
+                            <h3>Personal Information</h3>
+                            1.  Personal information about visitors to our site is collected only when knowingly and 
+                            voluntarily submitted. For example, we may need to collect such information to provide 
+                            you with further services or to answer or forward any requests or enquiries. It is our 
+                            intention that this policy will protect your personal information from being dealt with in 
+                            any way that is inconsistent with applicable privacy laws in Australia. 
+                            <h3>Use of Information</h3>
+                            2.  Personal information that visitors submit to our site is used only for the purpose for 
+                            which it is submitted or for such other secondary purposes that are related to the 
+                            primary purpose, unless we disclose other uses in this Internet Privacy Policy or at the 
+                            time of collection. Copies of correspondence sent from the web site, that may contain 
+                            personal information, are stored as archives for record-keeping and back-up purposes 
+                            only. 
+                            Collecting information on Registered members
+                            3.  As part of registering with  us, we collect personal information about you in order for 
+                            you to take full advantage of  our  services. To do this it may be necessary for you to 
+                            provide additional information to us as detailed below.
+                            4.  Registration
+                            Registration is  mandatory if you wish to use the services  provided by  us. Registration 
+                            may include  submitting your name, email address, address, telephone numbers, option 
+                            on receiving updates and promotional material  and other information. You may access 
+                            this information at any time by logging in and going to your account. 
+                            Credit Card Details
+                            5.  Credit Card details are only  stored  for the processing of payment and will be deleted 
+                            once payment is processed.
+                            <h3>Disclosure</h3>
+                            6.  Apart from where you have consented or disclosure is necessary to achieve the purpose 
+                            for which it was submitted, personal information may be disclosed in special situations 
+                            where we have reason to believe that doing so is necessary to identify, contact or bring 
+                            legal action against anyone damaging, injuring, or interfering (intentionally or 
+                            unintentionally) with our rights or property, users, or anyone else who could be harmed 
+                            by such activities. Also, we may disclose personal information when we believe in 
+                            good faith that the law requires disclosure. 
+                            7.  We may engage third parties to provide you with goods or services on our behalf. In 
+                            that circumstance, we may disclose your personal information to those third parties in 
+                            order to meet your request for goods or services. 
+                            <h3>Security</h3>
+                            8.  We strive to ensure the security, integrity  and privacy of personal information 
+                            submitted to our sites, and we review and update our security measures in light of 
+                            current technologies. Unfortunately, no data transmission over the Internet can be 
+                            guaranteed to be totally secure. 
+                            9.  However, we will  endeavour to take all reasonable steps to protect the personal 
+                            information you may transmit to us or from our online products and services. Once we 
+                            do receive your transmission, we will also make our best efforts to ensure its security 
+                            on our systems. 
+                            10.  In addition, our employees and the contractors who provide services related to our 
+                            information systems are obliged to respect the confidentiality of any personal 
+                            information held by us. However, we will not be held responsible for events arising 
+                            from unauthorised access to your personal information.
+                            Collecting Information from Users 
+                            11.  IP Addresses
+                            Our  web servers gather your IP address to assist with the diagnosis of problems or 
+                            support issues with our services. Again, information is gathered in aggregate only and 
+                            cannot be traced to an individual user. 
+                            12.  Cookies and Applets
+                            We use cookies to provide you with a better experience. These cookies allow us to 
+                            increase your security by storing your  session  ID and are  a  way of monitoring single 
+                            user access.
+                            This aggregate, non-personal information is collated and provided to us to assist in 
+                            analysing the usage of the site. 
+                            <h3>Access to Information</h3>
+                            13.  We will endeavour to take all reasonable steps to keep secure any information which 
+                            we hold about you, and to keep this information accurate and up to date. If, at any time, 
+                            you discover that information held about you is incorrect, you may contact us to have 
+                            the information corrected. 
+                            14.  In addition, our employees and the contractors who provide services related to our 
+                            information systems are obliged to respect the confidentiality of any personal 
+                            information held by us. 
+                            <h3>Links to other sites</h3>
+                            15.  We provide links to Web sites outside of our web sites, as well as to third party Web 
+                            sites. These linked sites are not under our control, and we cannot accept responsibility 
+                            for the conduct of companies linked to our website. Before disclosing your personal 
+                            information on any other website, we advise you to examine the terms and conditions 
+                            of using that Web site and its privacy statement. 
+                            <h3>Problems or questions</h3>
+                            16.  If we become aware of any ongoing concerns or problems with our web sites, we will 
+                            take these issues seriously and work to address these concerns. If you have any further 
+                            queries relating to our Privacy Policy, or you have a problem or complaint, please 
+                            contact us.
+                            17.  For more information about privacy issues in Australia and protecting your privacy, 
+                            visit the Australian Federal Privacy Commissioner's web site;
+                    </div>
+
+                      
+                     
+                      
+
+                    </div>
+
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

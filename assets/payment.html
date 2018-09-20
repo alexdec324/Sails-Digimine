@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chat -->
+    <link href="css/chat/jquery.jqplot.min.css" rel="stylesheet">
+    <link href="css/chat/jquery-ui.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="styles/payment.css" rel="stylesheet" type="text/css">
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p>
+                            <a href="#" class="hash_val"><span id="ethereum_val">24</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">12</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">35</span>H/s for Zcach</a>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="container">
+                <div class="main">
+                    <div class="row">
+                        <div id = "payment">
+                            <div id = "logo">
+                                <div id = "logo1">
+                                    <div id = "logo2">
+                                        <img src="images/payment/logo.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label id ="label1">DIGIMINE</label>
+                            </div>
+                            <div>
+                                <label id ="label2">Total:$4,668 AUD</label>
+                            </div>
+                            <div class="col-xs-10 col-xs-offset-1 datas">
+                                <form role="form">
+                                    <div class="input-group m-b data">
+                                        <span class="input-group-addon">
+                                            <img class = "img" src="images/payment/mail.png"  >
+                                        </span>
+                                        <input type="email" placeholder="Email" class="form-control" required>
+                                    </div>
+                                    <div class="input-group m-b data">
+                                        <div class="input-group m-b data1">
+                                            <span class="input-group-addon">
+                                                <img class = "img" src="images/payment/credit.png"  >
+                                            </span>
+                                            <input type="text" placeholder="Card number" class="form-control card" required>
+                                        </div>
+                                        <hr id="horizon">
+                                        <div class="col-xs-6 data2">
+                                            <div class="input-group m-b data1 date">
+                                                <span class="input-group-addon">
+                                                    <img class = "img" src="images/payment/calendar.png">
+                                                </span>
+                                                <input type="text" placeholder="MM/YY" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 data2">
+                                            <div class="input-group m-b data1">
+                                                <span class="input-group-addon border">
+                                                    <img class = "img" src="images/payment/lock.png"  >
+                                                </span>
+                                                <input type="password" placeholder="CVC" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group m-b data">
+                                        <label class="view-agreement ckb">
+                                            <input type="checkbox" name="agree" value="1" ></input>
+                                            <i class="fa"></i>
+                                            <span id="checklabel">Remember me everywhere</span>
+                                        </label>
+                                        <!-- <span class="input-group-addon checkspan">
+                                                <input type="checkbox" id ="checkin" class="form-control check">
+                                                <label for="checkin">
+                                                </label>
+                                        </span>
+                                        <div>
+                                            <label id="checklabel">Remember me everywhere</label>
+                                        </div> -->
+                                    </div>
+                                    <button class = "btn btnsave" id="send" type = "submit">
+                                        Pay $4,668
+                                    </button>
+                                </form>
+                            </div>
+                            <!-- <button class = "btn" id="stripe">
+                                        Powered by <b>stripe</b>
+                            </button> -->
+                        </div>                    
+                        <div id ="stripe">
+                            <img src="images/payment/stripe.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/chartJs/jquery.circlechart.js"></script>
+    
+    <!-- Custom and plugin javascript -->
+    <script src="js/dashboard/inspinia.js"></script>
+    <script src="js/jquery.knob.js"></script>
+    <!-- Chat plugin -->
+    <script src="js/plugins/datapicker/bootstrap-datepicker-payment.js"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.input-group.date').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+        });
+    </script>
+</body>
+</html>

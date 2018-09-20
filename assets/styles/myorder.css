@@ -1,0 +1,113 @@
+
+#page-wrapper .container{
+    padding-top: 40px;
+}
+
+#page-wrapper .col-md-12{
+    margin-bottom: 60px;
+}
+
+#page-wrapper .title{
+    color: #ffab32;
+    font-size: 20px;
+    font-family: 'roboto';
+}
+
+#page-wrapper table{
+    text-align: center;
+    font-size: 14px;
+    font-family: 'roboto';
+    color: #000000;
+}
+
+#page-wrapper table th{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'roboto';
+    color: white;
+    background-color: #102e44;
+    border-right-style: hidden;    
+}
+
+#page-wrapper table td{
+    border-right-style: hidden;  
+    padding: 12.5px;  
+}
+
+#page-wrapper table .first_col{
+    text-align: left;
+    padding-left: 22px;
+}
+
+#page-wrapper table .first_col_head{
+    text-align: left;
+    padding-left: 19px;
+}
+
+#page-wrapper table th{
+    padding: 12.5px;
+}
+
+#page-wrapper #first>tbody>tr:nth-child(odd) {
+    background-color: #eff8ff;
+    border-top-style: solid;
+    border-top-color: white;
+    border-top-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+}
+
+#page-wrapper #first>tbody>tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+#page-wrapper #second{
+    text-align: left;
+    font-size: 14px;
+    font-family: 'roboto';
+    color: #000000;
+}
+
+#page-wrapper #second>tbody>tr{
+    background-color: #e9e9e9;
+}
+
+#page-wrapper #second>tbody>tr:nth-child(even){
+    border-top-style: solid;
+    border-top-color: white;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+
+#page-wrapper #third>tbody>tr:nth-child(odd) {
+    background-color: #e9e9e9;
+    border-top-style: solid;
+    border-top-color: white;
+    border-top-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+}
+
+#page-wrapper #third>tbody>tr:nth-child(even) {
+    background-color: #f3faff;
+}
+
+#page-wrapper #forth>tbody>tr{
+    background-color: #e9e9e9;
+}
+
+#page-wrapper #forth>tbody>tr:nth-child(odd) {
+    background-color: #e9e9e9;
+    border-top-style: solid;
+    border-top-color: white;
+    border-top-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+}
+
+#page-wrapper #forth>tbody>tr:nth-child(even) {
+    background-color: #eaf0ff;
+}

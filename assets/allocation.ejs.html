@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Allocation</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="styles/homepage.css" rel="stylesheet" type="text/css">
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="styles/allocation.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+   <div class="header">
+        <div class="row">
+            <div class="col-xs-12 col-md-2 logo"> 
+                <a href="/welcome">
+                    <img src="images/logo-2.png" width="145px" class="img-responsive marg-auto-xs" alt="DigiMine" title="DigiMine" />
+                </a> 
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                <ul class="header-navbar">
+                    <li class="text">
+                        <p style="font-size: 14px;font-family: 'roboto_light';">Purchased hash power:</p>
+                        <p>
+                            <a href="#" class="hash_val"><span id="ethereum_val">24</span>Mh/s for Ethereum</a> | 
+                            <a href="" class="hash_val"><span id="litecoin_val">12</span>MH/s for Litecoin</a> | 
+                            <a href="" class="hash_val"><span id="zcash_val">35</span>H/s for Zcach</a>
+                        </p>
+                    </li>
+                    <li class="text" style="min-width: 300px;">
+                        <p class="market-value-title ">Account Market Value:</p>
+                        <span class="market-value" style="">52.25AUD</span>
+                    </li>
+                    <li class="action"><a href="#"><img src="images/icon/bell.png" width="22px" height="21px"></a></li>
+                    <li class="action account"><a class="page-scroll" href="/"><img src="images/icon/signout.png" width="21px" height="22px">
+                        <span>SignOut</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="mynavbar">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span class="block menu-title"><strong class="font-bold">WELCOME JOHN MARTIN</strong>
+                             </span>
+                        </div>
+                    </li>
+                    <li class="nav-header">
+                        <span class="bottom-line">________</span>
+                    </li>
+                    <li>
+                        <a href="/welcome"><img src="images/icon/summary.png" width="17px" height="17px">  <span class="nav-label">SUMMARY</span></a> 
+                    </li>
+                    <li>
+                        <a href="/hashpower"><img src="images/icon/flash.png" width="17px" height="19px">  <span class="nav-label">BUY HASHPOWER</span></a>
+                    </li>
+                    <li>
+                        <a href="/allocation" class="active"><img src="images/icon/allocation.png" width="17px" height="17px">  <span class="nav-label">ALLOCATION</span></a>
+                    </li>
+                    <li>
+                        <a href="/account"><img src="images/icon/user.png" width="20px" height="17px">  <span class="nav-label">MY ACCOUNT</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="container">
+                <div class="main">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="alert alert-info">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <p style="text-align:center"><strong>Notice!</strong></p><center>Please order hashpower <a href="/hashpower" class="page-link">here</a> start mining !</center> 
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="wrapper wrapper-content">
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-12">
+                                <div class="block">
+                                    <div class="body">
+                                        <div class="block_image row">
+                                            <div class="col-xs-4 col-md-4 imgtag" style="margin-left: 12px;">
+                                                <img src="images/icon/bitcoin.png" style="width: 64px;">
+                                            </div>    
+                                            <div class="col-xs-4 col-md-4 spantag" style="padding-left: 2px;">
+                                                <span class="bitword">Bitcoin</span>
+                                            </div>
+                                        </div>
+                                        <div class="block_line">
+                                            <img src="images/icon/line3.png" style="width: 221px;">
+                                        </div>
+                                        <div class="block_mining">
+                                            <span>Pure Bitcoin mining</span>
+                                        </div>
+                                        <div class="block_btn" id="btn1" style="background-color: rgb(255, 220, 154);">
+                                            <i class="fa fa-check-square-o">&nbsp&nbsp<font>SELECTED</font></i>
+                                            <input type="checkbox" style="visibility: hidden;" id="check1" checked="checked">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                                <div class="block">
+                                    <div class="body">
+                                        <div class="block_image row">
+                                            <div class="col-xs-4 col-md-4 imgtag" style="margin-left: 19px;">
+                                                <img src="images/icon/zcash.png" style="width: 64px;">
+                                            </div>    
+                                            <div class="col-xs-4 col-md-4 spantag" style="padding-left: 4px;">
+                                                <span class="bitword">Zcash</span>
+                                            </div>
+                                        </div>
+                                        <div class="block_line">
+                                            <img src="images/icon/line3.png" style="width: 221px;">
+                                        </div>
+                                        <div class="block_mining">
+                                            <span>Pure Zcash mining</span>
+                                        </div>
+                                        <div class="block_btn" id="btn2">
+                                            <i class="fa fa-check">&nbsp&nbsp<font>SELECT</font></i>
+                                            <input type="checkbox" style="visibility: hidden;" id="check2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                                <div class="block">
+                                    <div class="body">
+                                        <div class="block_image row">
+                                            <div class="col-xs-4 col-md-4 imgtag" style="margin-left: 25px; width: 59px;">
+                                                <img src="images/icon/ethe.png" style="width: 47px; height: 65px;">
+                                            </div>    
+                                            <div class="col-xs-4 col-md-4 spantag" style="padding-left: 7px; margin-top: 28px;">
+                                                <span class="bitword" style="font-size: 30px;">Ethereum</span>
+                                            </div>
+                                        </div>
+                                        <div class="block_line">
+                                            <img src="images/icon/line3.png" style="width: 221px;">
+                                        </div>
+                                        <div class="block_mining">
+                                            <span>Pure Ether mining</span>
+                                        </div>
+                                        <div class="block_btn" id="btn3">
+                                            <i class="fa fa-check">&nbsp&nbsp<font>SELECT</font></i>
+                                            <input type="checkbox" style="visibility: hidden;" id="check3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                                <div class="block">
+                                    <div class="body">
+                                        <div class="block_image row">
+                                            <div class="col-xs-4 col-md-4 imgtag" style="margin-left: 8px;">
+                                                <img src="images/icon/litecoin-white.png" style="width: 63px;">
+                                            </div>    
+                                            <div class="col-xs-4 col-md-4 spantag" style="padding-left: 6px;">
+                                                <span class="bitword">Litecoin</span>
+                                            </div>
+                                        </div>
+                                        <div class="block_line">
+                                            <img src="images/icon/line3.png" style="width: 221px;">
+                                        </div>
+                                        <div class="block_mining" style="margin-left: 25px;">
+                                            <span>Pure Litecoin mining</span>
+                                        </div>
+                                        <div class="block_btn" id="btn4">
+                                            <i class="fa fa-check">&nbsp&nbsp<font>SELECT</font></i>
+                                            <input type="checkbox" style="visibility: hidden;" id="check4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 100px;">
+                            <div class="col-md-3 col-xs-2">
+                                <img src="images/icon/down.png" style="width: 65px; height: 38px; float: left;">
+                            </div>
+                            <div class="col-md-6 col-xs-8">
+                                <button class="save"><i class="fa fa-download">&nbsp&nbsp<font>SAVE ALLOCATION</font></i></button>
+                                <button class="reset"><i class="fa fa-refresh">&nbsp&nbsp<font>RESET ALLOCATION</font></i></button>
+                            </div>
+                            <div class="col-md-3 col-xs-2">
+                                <img src="images/icon/ref.png" style="width: 65px; height: 38px; float: right;">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 120px;">
+                            <div class="col-md-3 col-xs-6">
+                                <div class="title">
+                                    <p><strong>BTC</strong></p>
+                                    <center><font>(Bitcoin)</font></center>
+                                </div>
+                                <div class="chart" style="width:130px;height:130px;">
+                                    <input class="knob" data-linecap=round value="<%=bitcoin%>" data-width="130" data-height="130" data-bgColor="#fdb900" data-fgColor="#ffffff" data-thickness=".1" data-inputColor="#000000" id="knob1">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <div class="title">
+                                    <p><strong>ETH</strong></p>
+                                    <center><font>(Ethereum)</font></center>
+                                </div>
+                                <div class="chart" style="width:130px;height:130px;">
+                                    <input class="knob" data-linecap="round" value="<%=ethereum%>" data-width="130" data-height="130" data-bgColor="#fdb900" data-fgColor="#ffffff" data-thickness=".1" data-inputColor="#000000" id="knob2">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <div class="title">
+                                    <p><strong>ZEC</strong></p>
+                                    <center><font>(Zcash)</font></center>
+                                </div>
+                                <div class="chart" style="width:130px;height:130px;">
+                                    <input class="knob" data-linecap="round" value="<%=zcash%>" data-width="130" data-height="130" data-bgColor="#fdb900" data-fgColor="#ffffff" data-thickness=".1" data-inputColor="#000000" id="knob3">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <div class="title">
+                                    <p><strong>LTC</strong></p>
+                                    <center><font>(Litecoin)</font></center>
+                                </div>
+                                <div class="chart" style="width:130px;height:130px;">
+                                    <input class="knob" data-linecap="round" value="<%=litecoin%>" data-width="130" data-height="130" data-bgColor="#fdb900" data-fgColor="#ffffff" data-thickness=".1" data-inputColor="#000000" id="knob4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 146px;">
+                            <div class="col-md-6 col-md-offset-3 col-xs-12" style="text-align: center;">
+                                <button class="save"><font style="font-size: 14px;">SAVE</font></button>
+                                <button class="reset"><font style="font-size: 14px;">CANSEL</font></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="footer">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright @ 2017 Genesis All rights reserved.</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/dashboard/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/jquery.knob.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.navbar-minimalize').click(function(){
+                $('#mynavbar').slideToggle();
+            });
+            $(window).resize(function(){
+                if ($(window).width() > 768) {
+                    $('#mynavbar').show();
+                }
+            });
+            $('#close-icon').click(function(){
+                $('#alert').fadeOut();
+            });
+
+            /****Coin Allocation Save******/
+            $(".save").click(function(){
+                var bitcoin = parseInt($("#knob1").val());
+                var ethereum = parseInt($("#knob2").val());
+                var zcash = parseInt($("#knob3").val());
+                var litecoin = parseInt($("#knob4").val());
+                var sum = bitcoin + ethereum + zcash + litecoin;
+                if (sum > 100) {
+                    console.log(sum);
+                    alert("Total Coinvalue must be 100!");
+                    return;
+                }
+                $.post(
+                    '/saveCoin',
+                    {bitcoin: bitcoin, ethereum: ethereum, zcash: zcash, litecoin: litecoin},
+                    function(){
+                        console.log("Success!");
+                    }
+                ).fail(function(res){
+                    alert("Error:" + res.getResponseHeader("error"));
+                });
+            });
+
+            /******Sum of Coin*****/
+            
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+                    $("#knob1").knob({
+                        change : function (value) {
+                            
+                        },
+                        release : function (value) {
+                            if(this.$.data('kontroled')){
+                                if( value > this.v) {
+                                    var difference = value - this.v;
+                                    if( $("#knob4").val() > difference ) {
+                                        var newval = parseInt($("#knob4").val()) - parseInt(difference);
+                                        $("#knob4").val(newval).trigger('change');
+                                    } else {
+                                        var newval = difference - $("#knob4").val();
+                                        var balance = 100 - parseInt($("#knob3").val()) - parseInt($("#knob1").val());
+                                        if (balance < 0) {
+                                            var balance1 = 100 - parseInt($("#knob1").val());
+                                            $("#knob3").val(balance1).trigger('change');
+                                            $("#knob2").val("0").trigger('change');
+                                        }
+                                        else{
+                                            $("#knob2").val(balance).trigger('change');
+                                        }
+                                        $("#knob4").val("0").trigger('change');
+                                    }
+                                } else {
+                                    var difference = this.v - value;
+                                    var knob4_value =100 - parseInt($("#knob1").val()) - parseInt($("#knob2").val()) - parseInt($("#knob3").val());
+                                    $("#knob4").val(knob4_value).trigger('change');
+
+                                }
+                            }
+                            
+                            console.log("release : " + value);
+                        },
+                        cancel : function () {
+                            console.log("cancel : ", this);
+                        },
+                    }).children().off('mousewheel DOMMouseScroll');
+             
+            
+                    $("#knob2").knob({
+                        change : function (value) {
+                           
+                        },
+                        release : function (value) {
+                            if(this.$.data('kontroled')){
+                                if( value > this.v) {
+                                    var difference = value - this.v;
+                                    if( $("#knob4").val() > difference ) {
+                                        var newval = parseInt($("#knob4").val()) - parseInt(difference);
+                                        $("#knob4").val(newval).trigger('change');
+                                    } else {
+                                        var newval = difference - $("#knob4").val();
+                                        var balance = 100 - parseInt($("#knob1").val()) - parseInt($("#knob2").val());
+                                        if (balance < 0) {
+                                            var balance1 = 100 - parseInt($("#knob2").val());
+                                            $("#knob1").val(balance1).trigger('change');
+                                            $("#knob3").val("0").trigger('change');
+                                        }else{
+                                            $("#knob3").val(balance).trigger('change');
+                                        }
+                                        $("#knob4").val("0").trigger('change');
+                                    }
+                                } else {
+                                    var difference = this.v - value;
+                                    var knob4_value =100 - parseInt($("#knob1").val()) - parseInt($("#knob2").val()) - parseInt($("#knob3").val());
+                                    $("#knob4").val(knob4_value).trigger('change');
+                                }
+                            }
+                            console.log("release : " + value);
+                        },
+                        cancel : function () {
+                            console.log("cancel : ", this);
+                        },
+                    }).children().off('mousewheel DOMMouseScroll');
+
+                    $("#knob3").knob({
+                        change : function (value) {
+                        },
+                        release : function (value) {
+                            if(this.$.data('kontroled')){
+                                if( value > this.v) {
+                                    var difference = value - this.v;
+                                    if( $("#knob4").val() > difference ) {
+                                        var newval = parseInt($("#knob4").val()) - parseInt(difference);
+                                        $("#knob4").val(newval).trigger('change');
+                                    } else {
+                                        var newval = difference - $("#knob4").val();
+                                        var balance = 100 - parseInt($("#knob1").val()) - parseInt($("#knob3").val());
+                                        if (balance < 0) {
+                                            var balance1 = 100 - parseInt($("#knob3").val());
+                                            $("#knob1").val(balance1).trigger('change');
+                                            $("#knob2").val("0").trigger('change');
+                                        }else{
+                                            $("#knob2").val(balance).trigger('change');
+                                        }
+                                        $("#knob4").val("0").trigger('change');
+                                    }
+                                } else {
+                                    var difference = this.v - value;
+                                    var knob4_value =100 - parseInt($("#knob1").val()) - parseInt($("#knob2").val()) - parseInt($("#knob3").val());
+                                    $("#knob4").val(knob4_value).trigger('change');
+                                }
+                            }
+                            
+                            console.log("release : " + value);
+                        },
+                        cancel : function () {
+                            console.log("cancel : ", this);
+                        },
+                    }).children().off('mousewheel DOMMouseScroll');
+
+                    $("#knob4").knob({
+                        change : function (value) {
+                        },
+                        release : function (value) {
+                            
+                        },
+                        cancel : function () {
+                        },
+                    }).children().off('mousewheel DOMMouseScroll');
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#btn1").click(function(){
+                if($( "#btn2 i").hasClass("fa-check-square-o") || $( "#btn3 i").hasClass("fa-check-square-o") || $( "#btn4 i").hasClass("fa-check-square-o")) {
+                    if($( "#btn2 i").hasClass("fa-check-square-o")) {
+                        $( "#btn2" ).css( "background-color", "#f5b143" );
+                        $( "#btn2 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn2 i font" ).text( "SELECT" );
+                        $("#check2").removeAttr("checked");
+                    }
+                    if($( "#btn3 i").hasClass("fa-check-square-o")) {
+                        $( "#btn3" ).css( "background-color", "#f5b143" );
+                        $( "#btn3 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn3 i font" ).text( "SELECT" );
+                        $("#check3").removeAttr("checked");
+                    }
+                    if($( "#btn4 i").hasClass("fa-check-square-o")) {
+                        $( "#btn4" ).css( "background-color", "#f5b143" );
+                        $( "#btn4 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn4 i font" ).text( "SELECT" );
+                        $("#check4").removeAttr("checked");
+                    }
+                } 
+                if($( "#btn1 i").hasClass("fa-check")){
+                    $( this ).css( "background-color", "#ffdc9a" );
+                    $( "#btn1 i" ).addClass("fa fa-check-square-o").removeClass("fa-check");
+                    $( "#btn1 i font" ).text( "SELECTED" );
+                    $("#check1").attr("checked","checked");
+                }else{
+                    $( this ).css( "background-color", "#f5b143" );
+                    $( "#btn1 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                    $( "#btn1 i font" ).text( "SELECT" );
+                    $("#check1").removeAttr("checked");
+                }
+            });
+            $( "#btn2").click(function(){
+                if($( "#btn1 i").hasClass("fa-check-square-o") || $( "#btn3 i").hasClass("fa-check-square-o") || $( "#btn4 i").hasClass("fa-check-square-o")) {
+                    if($( "#btn1 i").hasClass("fa-check-square-o")) {
+                        $( "#btn1" ).css( "background-color", "#f5b143" );
+                        $( "#btn1 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn1 i font" ).text( "SELECT" );
+                        $("#check1").removeAttr("checked");
+                    }
+                    if($( "#btn3 i").hasClass("fa-check-square-o")) {
+                        $( "#btn3" ).css( "background-color", "#f5b143" );
+                        $( "#btn3 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn3 i font" ).text( "SELECT" );
+                        $("#check3").removeAttr("checked");
+                    }
+                    if($( "#btn4 i").hasClass("fa-check-square-o")) {
+                        $( "#btn4" ).css( "background-color", "#f5b143" );
+                        $( "#btn4 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn4 i font" ).text( "SELECT" );
+                        $("#check4").removeAttr("checked");
+                    }
+                }
+                if($( "#btn2 i").hasClass("fa-check")){
+                    $( this ).css( "background-color", "#ffdc9a" );
+                    $( "#btn2 i" ).addClass("fa fa-check-square-o").removeClass("fa-check");
+                    $( "#btn2 i font" ).text( "SELECTED" );
+                    $("#check2").attr("checked","checked");
+                }else{
+                    $( this ).css( "background-color", "#f5b143" );
+                    $( "#btn2 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                    $( "#btn2 i font" ).text( "SELECT" );
+                    $("#check2").removeAttr("checked");
+                }
+                
+            });
+            $( "#btn3").click(function(){
+                if($( "#btn1 i").hasClass("fa-check-square-o") || $( "#btn2 i").hasClass("fa-check-square-o") || $( "#btn4 i").hasClass("fa-check-square-o")) {
+                    if($( "#btn1 i").hasClass("fa-check-square-o")) {
+                        $( "#btn1" ).css( "background-color", "#f5b143" );
+                        $( "#btn1 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn1 i font" ).text( "SELECT" );
+                        $("#check1").removeAttr("checked");
+                    }
+                    if($( "#btn2 i").hasClass("fa-check-square-o")) {
+                        $( "#btn2" ).css( "background-color", "#f5b143" );
+                        $( "#btn2 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn2 i font" ).text( "SELECT" );
+                        $("#check2").removeAttr("checked");
+                    }
+                    if($( "#btn4 i").hasClass("fa-check-square-o")) {
+                        $( "#btn4" ).css( "background-color", "#f5b143" );
+                        $( "#btn4 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn4 i font" ).text( "SELECT" );
+                        $("#check4").removeAttr("checked");
+                    }
+                } 
+                if($( "#btn3 i").hasClass("fa-check")){
+                    $( this ).css( "background-color", "#ffdc9a" );
+                    $( "#btn3 i" ).addClass("fa fa-check-square-o").removeClass("fa-check");
+                    $( "#btn3 i font" ).text( "SELECTED" );
+                    $("#check3").attr("checked","checked");
+                }else{
+                    $( this ).css( "background-color", "#f5b143" );
+                    $( "#btn3 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                    $( "#btn3 i font" ).text( "SELECT" );
+                    $("#check3").removeAttr("checked");
+                }
+            });
+            $( "#btn4").click(function(){
+                if($( "#btn1 i").hasClass("fa-check-square-o") || $( "#btn2 i").hasClass("fa-check-square-o") || $( "#btn3 i").hasClass("fa-check-square-o")) {
+                    if($( "#btn1 i").hasClass("fa-check-square-o")) {
+                        $( "#btn1" ).css( "background-color", "#f5b143" );
+                        $( "#btn1 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn1 i font" ).text( "SELECT" );
+                        $("#check1").removeAttr("checked");
+                    }
+                    if($( "#btn2 i").hasClass("fa-check-square-o")) {
+                        $( "#btn2" ).css( "background-color", "#f5b143" );
+                        $( "#btn2 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn2 i font" ).text( "SELECT" );
+                        $("#check2").removeAttr("checked");
+                    }
+                    if($( "#btn3 i").hasClass("fa-check-square-o")) {
+                        $( "#btn3" ).css( "background-color", "#f5b143" );
+                        $( "#btn3 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                        $( "#btn3 i font" ).text( "SELECT" );
+                        $("#check3").removeAttr("checked");
+                    }
+                }
+                if($( "#btn4 i").hasClass("fa-check")){
+                    $( this ).css( "background-color", "#ffdc9a" );
+                    $( "#btn4 i" ).addClass("fa fa-check-square-o").removeClass("fa-check");
+                    $( "#btn4 i font" ).text( "SELECTED" );
+                    $("#check4").attr("checked","checked");
+                }else{
+                    $( this ).css( "background-color", "#f5b143" );
+                    $( "#btn4 i" ).addClass("fa fa-check").removeClass("fa-check-square-o");
+                    $( "#btn4 i font" ).text( "SELECT" );
+                    $("#check4").removeAttr("checked");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
