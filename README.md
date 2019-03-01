@@ -1,1 +1,1 @@
-# Sails-Digimine
+# Sails-GenesisMining
